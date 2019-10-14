@@ -1,0 +1,15 @@
+const START_GAME = 'START_GAME';
+const NEXT_BLOCK = 'NEXT_BLOCK';
+const MATRIX = 'MATRIX';
+const MOVE_BLOCK = 'MOVE_BLOCK';
+const KEY_LEFT = 'KEY_LEFT';
+const KEY_RIGHT = 'KEY_RIGHT';
+
+export {
+  START_GAME,
+  NEXT_BLOCK,
+  MATRIX,
+  MOVE_BLOCK,
+  KEY_LEFT,
+  KEY_RIGHT,
+}

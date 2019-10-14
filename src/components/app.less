@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+.app {
+  width: 640px;
+  padding-top: 42px;
+  box-shadow: 0 0 10px #fff inset;
+  border-radius: 20px;
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // margin: -480px 0 0 -320px;
+  background: #efcc19;
+  b {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border: 2px solid #879372;
+    margin: 0 2px 2px 0;
+    float: left;
+    &:after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      background: #879372;
+      overflow: hidden;
+    }
+    &.c {
+      border-color: #000;
+      &:after {
+        background: #000;
+      }
+    }
+    &.d {
+      border-color: #560000;
+      &:after {
+        background: #560000;
+      }
+    }
+  }
+}
