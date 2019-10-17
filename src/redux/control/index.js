@@ -6,6 +6,7 @@ const keyboard = {
   38: 'rotate',
   39: 'right',
   40: 'down',
+  32: 'pause',
 };
 
 const boardKeys = Object.keys(keyboard).map(e => parseInt(e, 10));

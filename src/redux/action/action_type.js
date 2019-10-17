@@ -4,6 +4,7 @@ const MATRIX = 'MATRIX';
 const MOVE_BLOCK = 'MOVE_BLOCK';
 const KEY_LEFT = 'KEY_LEFT';
 const KEY_RIGHT = 'KEY_RIGHT';
+const PAUSE = 'PAUSE';
 
 export {
   START_GAME,
@@ -12,4 +13,5 @@ export {
   MOVE_BLOCK,
   KEY_LEFT,
   KEY_RIGHT,
+  PAUSE,
 }

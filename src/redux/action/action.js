@@ -30,10 +30,18 @@ const moveBlock = (option) => {
   }
 }
 
+function pause(data) {
+  return {
+    type: actionType.PAUSE,
+    data,
+  };
+}
+
 export {
   start_game,
   next_block,
   matrix,
   moveBlock,
   keyboard,
+  pause,
 }

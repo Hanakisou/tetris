@@ -33,6 +33,7 @@ export default class Canvas extends PureComponent{
   }
   render() {
     const matrix = this.getResult();
+    console.log('~~', this.props);
     return (
       matrix.map((v, i) => <div key={`line_${i}`} style={{display: 'flex',}}>
         {

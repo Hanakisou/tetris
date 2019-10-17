@@ -61,6 +61,14 @@ const states = {
       store.dispatch(actions.next_block());
       states.auto();
     }, 100);
+  },
+  pause: (isPause) => {
+    store.dispatch(actions.pause(isPause));
+    if (isPause) {
+      clearTimeout(states.fallInterval);
+      return;
+    }
+    states.auto();
   }
 }
 
