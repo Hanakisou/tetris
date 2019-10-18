@@ -32,6 +32,12 @@ const util = {
         return true;
       })
     ))
+  },
+  isOver(matrix) {
+    return matrix.get(0).some(n => !!n);
+  },
+  isClear() {
+
   }
 }
 

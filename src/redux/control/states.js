@@ -2,7 +2,7 @@ import { List } from 'immutable';
 import store from '../store/store';
 import * as actions from '../action/action';
 import { blankLine } from '../util/util';
-import { canMove } from '../util/index';
+import { canMove, isOver, isClear } from '../util/index';
 
 const getStartMatrix = () => {
     const matrix = [];
@@ -32,7 +32,7 @@ const states = {
       const next = cur.fall();
       if (canMove(next, state.matrix)) {
         store.dispatch(actions.moveBlock(next));
-        states.fallInterval = setTimeout(fall, 800)
+        states.fallInterval = setTimeout(fall, 800);
       } else {
         let matrix = state.matrix;
         const shape = cur && cur.shape;
@@ -56,6 +56,11 @@ const states = {
     clearTimeout(states.fallInterval);
     store.dispatch(actions.matrix(matrix));
 
+    if (isOver(matrix)) {
+      states.overStart();
+      return;
+    }
+
     setTimeout(() => {
       store.dispatch(actions.moveBlock({ type: store.getState().next }));
       store.dispatch(actions.next_block());
@@ -69,6 +74,9 @@ const states = {
       return;
     }
     states.auto();
+  },
+  overStart() {
+    clearTimeout(states.fallInterval);
   }
 }
 
