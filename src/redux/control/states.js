@@ -56,6 +56,10 @@ const states = {
     clearTimeout(states.fallInterval);
     store.dispatch(actions.matrix(matrix));
 
+    if (isClear(matrix)) {
+      return;
+    }
+
     if (isOver(matrix)) {
       states.overStart();
       return;
@@ -66,6 +70,20 @@ const states = {
       store.dispatch(actions.next_block());
       states.auto();
     }, 100);
+  },
+  clearLines(matrix, lines) {
+    const state = store.getState();
+    let newMatrix = matrix;
+    lines.forEach(v => {
+      newMatrix = newMatrix.splice(v, 1);
+      newMatrix = newMatrix.unshift(List(blankLine));
+    });
+    store.dispatch(actions.matrix(newMatrix));
+    store.dispatch(actions.moveBlock({type: state.next}));
+    store.dispatch(actions.next_block());
+    states.auto();
+    const len = state.clearLines + lines.length;
+    store.dispatch(actions.clearLines(len));
   },
   pause: (isPause) => {
     store.dispatch(actions.pause(isPause));

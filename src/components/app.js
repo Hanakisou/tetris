@@ -1,5 +1,6 @@
 import React, { Component, PureComponent } from 'react';
 import Canvas from '../containers/canvas';
+import Next from '../containers/next';
 import './app.less';
 
 
@@ -9,8 +10,9 @@ export default class App extends PureComponent{
   }
   render() {
     return (
-      <div>
+      <div className="con-box">
         <Canvas />
+        <Next />
       </div>
     )
   }

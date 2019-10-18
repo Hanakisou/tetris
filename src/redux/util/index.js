@@ -36,8 +36,17 @@ const util = {
   isOver(matrix) {
     return matrix.get(0).some(n => !!n);
   },
-  isClear() {
-
+  isClear(matrix) {
+    const clearLines = [];
+    matrix.forEach((m, k) => {
+      if (m.every(n => !!n)) {
+        clearLines.push(k);
+      }
+    })
+    if (clearLines.length === 0) {
+      return false;
+    }
+    return clearLines;
   }
 }
 

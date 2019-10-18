@@ -5,6 +5,7 @@ const MOVE_BLOCK = 'MOVE_BLOCK';
 const KEY_LEFT = 'KEY_LEFT';
 const KEY_RIGHT = 'KEY_RIGHT';
 const PAUSE = 'PAUSE';
+const CLEARLINES = 'CLEARLINES';
 
 export {
   START_GAME,
@@ -14,4 +15,5 @@ export {
   KEY_LEFT,
   KEY_RIGHT,
   PAUSE,
+  CLEARLINES,
 }

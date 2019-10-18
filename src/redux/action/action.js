@@ -37,6 +37,13 @@ function pause(data) {
   };
 }
 
+function clearLines(data) {
+  return {
+    type: actionType.CLEARLINES,
+    data,
+  }
+}
+
 export {
   start_game,
   next_block,
@@ -44,4 +51,5 @@ export {
   moveBlock,
   keyboard,
   pause,
+  clearLines,
 }
