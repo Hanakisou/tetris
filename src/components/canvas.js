@@ -79,11 +79,15 @@ export default class Canvas extends PureComponent{
   render() {
     const matrix = this.getResult();
     return (
-      matrix.map((v, i) => <div key={`line_${i}`} style={{display: 'flex',}}>
+      <div>
         {
-          v.map((each, idx) => <b key={`each_${idx}`} className={each === 1 ? 'c' : each === 2 ? 'd' : null} />)
+          matrix.map((v, i) => <div key={`line_${i}`} style={{display: 'flex',}}>
+            {
+              v.map((each, idx) => <b key={`each_${idx}`} className={each === 1 ? 'c' : each === 2 ? 'd' : null} />)
+            }
+          </div>)
         }
-      </div>)
+      </div>
     )
   }
 }
